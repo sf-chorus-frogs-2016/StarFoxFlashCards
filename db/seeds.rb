@@ -29,12 +29,6 @@ Card.create(
 
 Card.create(
     deck_id: 1,
-    question: "Likes to eat flies",
-    answer: "frog"
-    )
-
-Card.create(
-    deck_id: 1,
     question: "A creature that is kind of like a toad, but smooth",
     answer: "frog"
     )
