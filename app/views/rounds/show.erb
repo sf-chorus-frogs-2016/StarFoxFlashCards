@@ -1,0 +1,9 @@
+<h2>Deck Name: <%=@current_deck.title%></h2><br><br>
+
+<em><font color="red"><%= @current_card.question %></font></em><br><br>
+
+<label for="title">Enter your guess: </label><br><br>
+<form action="/round/<%=@current_deck.id%>/<%=@current_card.id%>" method="get">
+  <input type="text" name="guess" value="" size="35"><br><br>
+  <input type="submit" value="Submit your guess:" style="width: 18em; height: 3em;">
+</form>
