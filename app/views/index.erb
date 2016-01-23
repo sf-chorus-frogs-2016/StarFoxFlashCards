@@ -1,23 +1,21 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+<h1>Welcome to our flashcard game!</h1>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+<p>If you're new, <a href="/users/new">please sign up!</a></p>
+<div class = "sign_up_div">
+</div><br>
+<% if !logged_in %>
+<h3>If you've already signed up, please log in with your username!</h3>
+<div class = "login_form">
+  <form action='/sessions' method='POST' name='login_form'>
+  <input type='text' placeholder='Email Address' name='email'>
+  <input type='password' name='password'>
+  <input type='submit'>
+  </form>
 </div>
+<% end %>
+<% if logged_in %>
+<a href="/round/new">Click here to play!</a>
+<% end %>
+
+
+
